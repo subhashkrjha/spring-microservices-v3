@@ -31,12 +31,18 @@ docker run -p 5000:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
 	- http://localhost:5001/hello-world
 
 ```sh
-docker run -p -d 5000:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
+#Below commnad was not running in Docker version 24.0.7, build afdd53b
+#docker run -p -d 5000:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
+#Here is the corrcet one(Docker version 24.0.7, build afdd53b).
+docker run --detach -p 5000:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
 docker logs 04e52ff9270f5810eefe1f77222852dc1461c22440d4ecd6228b5c38f09d838e
 docker logs c2ba
 docker logs -f c2ba
 docker container ls
-docker run -p -d 5001:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
+#Below commnad was not running in Docker version 24.0.7, build afdd53b
+#docker run -p -d 5001:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
+#Here is the correct one(Docker version 24.0.7, build afdd53b)
+docker run --detach -p 5001:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
 docker images #one image - multiple containers
 docker container ls -a #show stopped containers as well
 docker container stop f708b7ee1a8b
